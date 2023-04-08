@@ -8,7 +8,7 @@ services:
     networks:
       default:
         ipv4_address: 172.31.1.1
-    ports:
+    expose:
       - "53:53"
       - "53:53/udp"
     volumes:
@@ -28,7 +28,7 @@ services:
 
 networks:
   default:
-    name: development
+    name: happydevel
     ipam:
       config:
         - subnet: 172.31.0.0/16

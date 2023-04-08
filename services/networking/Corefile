@@ -2,8 +2,8 @@
     #log
     errors
 
-    rewrite name regex (.*)\.development.com host.docker.internal
-    rewrite name development.com host.docker.internal
+    rewrite name regex (.*)\.happydevel.com host.docker.internal
+    rewrite name happydevel.com host.docker.internal
 
     forward . /etc/resolv.conf
 }
