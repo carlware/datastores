@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  elasticsearch:
+    image: elasticsearch:${ELASTICSEARCH_VERSION:-8.6.1}
+    restart: unless-stopped
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms256M -Xmx1024M
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch-8:/usr/share/elasticsearch/data
+
+  kibana:
+    image: kibana:${KIBANA_VERSION:-8.6.1}
+    restart: unless-stopped
+    ports:
+      - "5601:5601"
+
+volumes:
+  elasticsearch-8:
