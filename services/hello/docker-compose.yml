@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  hello:
+    image: gcr.io/google-samples/node-hello:1.0
+    dns: 172.31.1.1
+    ports:
+      - "3001:8080"
+
+networks:
+  default:
+    name: happydevel
+    external: true
